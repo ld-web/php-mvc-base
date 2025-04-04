@@ -21,7 +21,3 @@ Commande :
 ```bash
 composer start
 ```
-
-## Cours
-
-Le cours complet se trouve à [cette adresse](https://ld-web.github.io/su-2023-php-mvc-course/).
