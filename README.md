@@ -21,3 +21,9 @@ Commande :
 ```bash
 composer start
 ```
+
+## Tests
+
+```bash
+composer test
+```
