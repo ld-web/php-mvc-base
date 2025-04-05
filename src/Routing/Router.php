@@ -35,8 +35,8 @@ class Router
         foreach ($this->routes as $route) {
             if ($this->argumentResolver->match($uri, $route) && in_array($httpMethod, $route->getHttpMethods())) {
                 $params = $this->argumentResolver->resolveUrlParams($uri, $route);
-
                 $route->setUrlParams($params);
+
                 return $route;
             }
         }
@@ -102,9 +102,6 @@ class Router
 
     public function registerRoutes(): void
     {
-        // Explorer le dossier des classes de contrôleurs
-        // Pour chacun d'eux, enregistrer les méthodes
-        // donc les contrôleurs portant un attribut Route
         $fqcns = Filesystem::getFqcns(
             self::CONTROLLERS_BASE_DIR,
             self::CONTROLLERS_BASE_NAMESPACE
