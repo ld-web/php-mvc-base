@@ -9,7 +9,7 @@ class FilesystemTest extends TestCase
 {
     public function testGetFqcns()
     {
-        $fqcns = Filesystem::getFqcns(__DIR__, "App\\Tests\\Utils\\");
-        $this->assertEquals(['App\Tests\Utils\FilesystemTest'], $fqcns);
+        $fqcns = Filesystem::getFqcns(__DIR__, "Tests\\Utils\\");
+        $this->assertEquals(['Tests\Utils\FilesystemTest'], $fqcns);
     }
 }
