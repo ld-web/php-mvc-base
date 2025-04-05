@@ -9,7 +9,8 @@
   ],
   "scripts": {
     "start": "php -S localhost:8000 -t public/ public/index.php",
-    "test": "phpunit --testdox"
+    "test": "phpunit --testdox",
+    "test:coverage": "XDEBUG_MODE=coverage phpunit --testdox --coverage-html coverage"
   },
   "autoload": {
     "psr-4": {

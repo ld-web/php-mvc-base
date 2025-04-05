@@ -4,3 +4,4 @@ conf/*.ini
 .vscode/
 .env.local
 .phpunit.cache
+coverage/
