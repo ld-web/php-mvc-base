@@ -61,10 +61,10 @@ class Router
         $controllerClass = $route->getController();
         $method = $route->getMethod();
 
-        $constructorParams = $this->getMethodParams($controllerClass . '::__construct');
+        $constructorParams = $this->getServicesFromSignature($controllerClass . '::__construct');
         $controllerInstance = new $controllerClass(...$constructorParams);
 
-        $serviceParams = $this->getMethodParams($controllerClass . '::' . $method);
+        $serviceParams = $this->getServicesFromSignature($controllerClass . '::' . $method);
 
         $params = array_merge($serviceParams, $route->getUrlParams());
 
@@ -77,7 +77,7 @@ class Router
      * @param string $method Format : FQCN::method
      * @return array The services to inject
      */
-    private function getMethodParams(string $method): array
+    private function getServicesFromSignature(string $method): array
     {
         $params = [];
 
