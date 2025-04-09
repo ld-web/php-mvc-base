@@ -49,6 +49,10 @@ abstract class ModelRepository
             return null;
         }
 
-        return $this->serializer->deserialize(json_encode($result), $this->modelClass, 'json');
+        return $this->serializer->deserialize(
+            json_encode($result),
+            $this->modelClass,
+            'json'
+        );
     }
 }
