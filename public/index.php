@@ -9,7 +9,6 @@ if (
     return false;
 }
 
-// Initialisation de certaines choses
 use App\DependencyInjection\Container;
 use App\Routing\ArgumentResolver;
 use App\Routing\RouteNotFoundException;
@@ -50,9 +49,10 @@ $twig = new Environment($loader, [
 $serviceContainer = new Container();
 $serviceContainer
   ->set(Environment::class, $twig)
-  ->set(PDO::class, $pdo);
+  ->set(PDO::class, $pdo ?? null);
 
-// Appeler un routeur pour lui transférer la requête
+$serviceContainer->registerRepositories();
+
 $router = new Router($serviceContainer, new ArgumentResolver());
 $router->registerRoutes();
 
